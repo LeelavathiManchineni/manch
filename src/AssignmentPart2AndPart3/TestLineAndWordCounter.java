@@ -1,9 +1,9 @@
 package AssignmentPart2AndPart3;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 public class TestLineAndWordCounter {
     @Test
     public void testLineCountOne() {
@@ -11,7 +11,7 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.addLine("Hi");
         int expected = 1;
         int actual = lineAndWordCounter.getTotalLines();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -23,8 +23,8 @@ public class TestLineAndWordCounter {
         int actualLine = lineAndWordCounter.getTotalLines();
         int expectedChar = 16;
         int actualChar = lineAndWordCounter.getTotalCharacters();
-        Assert.assertEquals(expectedChar, actualChar);
-        Assert.assertEquals(expectedLine, actualLine);
+        assertEquals(expectedChar, actualChar);
+        assertEquals(expectedLine, actualLine);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.addLine("how are you");
         int expected = 16;
         int actual = lineAndWordCounter.getTotalCharacters();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -44,7 +44,7 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.addLine("    ");
         int expectedLine = 1;
         int actualLine = lineAndWordCounter.getTotalLines();
-        Assert.assertEquals(expectedLine, actualLine);
+        assertEquals(expectedLine, actualLine);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.addLine("    ");
         int expectedChar = 4;
         int actualChar = lineAndWordCounter.getTotalCharacters();
-        Assert.assertEquals(expectedChar, actualChar);
+        assertEquals(expectedChar, actualChar);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class TestLineAndWordCounter {
         String line = "this line has stop";
         boolean expected = true;
         boolean actual = lineAndWordCounter.isStopDetect(line);
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -72,7 +72,7 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.wordCountAndFindLongestWord("how are you");
         int expected = 4;
         int actual = lineAndWordCounter.getTotalWords();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -82,6 +82,6 @@ public class TestLineAndWordCounter {
         lineAndWordCounter.wordCountAndFindLongestWord("how are you");
         String expected = "Hello";
         String actual = lineAndWordCounter.getLongestWord();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }

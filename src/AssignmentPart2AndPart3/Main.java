@@ -7,11 +7,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         LineAndWordCounter lineAndWordCounter = new LineAndWordCounter();
         String line;
-        int i = 0;
-        while (i < 5) {  // running infinite loop for reading the lines from the user
+
+        while (true) {  // running infinite loop for reading the lines from the user
             line = scanner.nextLine();
             //if (line.contains("stop")) {
-            if (lineAndWordCounter.isStopDetect(line) == true) {
+            if (lineAndWordCounter.isStopDetect(line)) {
                 break;
             }
             lineAndWordCounter.addLine(line);

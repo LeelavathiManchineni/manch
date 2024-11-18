@@ -44,7 +44,7 @@ public class LineAndWordCounter {
     }
 
     public boolean isStopDetect(String line) {
-        if (line.contains("stop")) {
+        if (line.equals("stop")) {
             return true;
         } else
             return false;

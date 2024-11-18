@@ -9,7 +9,6 @@ public class LineAndWordCounter {
     public void wordCountAndFindLongestWord(String line) {
         String[] myStringArray = line.split("\\s");
         totalWords += myStringArray.length;
-        //System.out.println("Total words count is:" + totalWords);
 
         for (int i = 0; i < myStringArray.length; i++) {
             //System.out.println(myStringArray[i]);

@@ -1,20 +1,30 @@
 package AssignmentPart2AndPart3;
 
 public class LineAndWordCounter {
-    private int totalLines = 0;
-    private int totalCharacters = 0;
-    private int totalWords = 0;
-    private String longestWord = " "; // Initializing longestWord as 0 length
+    private int totalLines;
+    private int totalCharacters;
+    private int totalWords;
+    private String longestWord;
+
+    public LineAndWordCounter( int totalLines, int totalCharacters, int totalWords, String longestWord) {
+        this.totalLines = totalLines;
+        this.totalCharacters = totalCharacters;
+        this.totalWords = totalWords;
+        this.longestWord = longestWord;
+    }
+
 
     public void wordCountAndFindLongestWord(String line) {
         String[] myStringArray = line.split("\\s");
         totalWords += myStringArray.length;
 
         for (int i = 0; i < myStringArray.length; i++) {
-            //System.out.println(myStringArray[i]);
+            //System.out.println("words is: " + myStringArray[i]);
+            //System.out.println("size of words is: " + myStringArray[i].length());
             // Finding the longestWord in myStringArray
             if (longestWord.length() < myStringArray[i].length()) {
                 longestWord = myStringArray[i];
+                //System.out.println("long word is : " + longestWord);
             }
         }
 
@@ -24,6 +34,7 @@ public class LineAndWordCounter {
     public void addLine(String line) {
         totalLines++;
         totalCharacters += line.length();
+
     }
 
     public int getTotalLines() {
@@ -49,3 +60,4 @@ public class LineAndWordCounter {
             return false;
     }
 }
+
